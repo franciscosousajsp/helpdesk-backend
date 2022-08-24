@@ -10,17 +10,17 @@ import com.fasterxml.jackson.annotation.JsonFormat;
 import com.franciscp.helpdesk.domain.Tecnico;
 import com.franciscp.helpdesk.domain.enums.Perfil;
 
-public class TecnicoDTO implements Serializable{
+public class TecnicoDTO implements Serializable {
 
 	private static final long serialVersionUID = 1L;
-	
+
 	protected Integer id;
 	protected String nome;
 	protected String cpf;
 	protected String email;
 	protected String senha;
 	protected Set<Integer> perfis = new HashSet<>();
-	
+
 	@JsonFormat(pattern = "dd/MM/yyyy")
 	protected LocalDate dataCriacao = LocalDate.now();
 
@@ -35,7 +35,7 @@ public class TecnicoDTO implements Serializable{
 		this.cpf = obj.getCpf();
 		this.email = obj.getEmail();
 		this.senha = obj.getSenha();
-		this.perfis = obj.getPerfis().stream().map(x-> x.getCodigo()).collect(Collectors.toSet());
+		this.perfis = obj.getPerfis().stream().map(x -> x.getCodigo()).collect(Collectors.toSet());
 		this.dataCriacao = obj.getDataCriacao();
 	}
 
@@ -80,11 +80,11 @@ public class TecnicoDTO implements Serializable{
 	}
 
 	public Set<Perfil> getPerfis() {
-		return perfis.stream().map(x-> Perfil.toEnum(x)).collect(Collectors.toSet());
+		return perfis.stream().map(x -> Perfil.toEnum(x)).collect(Collectors.toSet());
 	}
 
 	public void addPerfil(Perfil perfil) {
-		this.perfis.add( perfil.getCodigo());
+		this.perfis.add(perfil.getCodigo());
 	}
 
 	public LocalDate getDataCriacao() {
@@ -94,8 +94,5 @@ public class TecnicoDTO implements Serializable{
 	public void setDataCriacao(LocalDate dataCriacao) {
 		this.dataCriacao = dataCriacao;
 	}
-	
-	
-	
 
 }
