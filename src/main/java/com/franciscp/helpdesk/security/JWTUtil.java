@@ -1,6 +1,5 @@
 package com.franciscp.helpdesk.security;
 
-
 import java.util.Date;
 
 import org.springframework.beans.factory.annotation.Value;
@@ -12,7 +11,7 @@ import io.jsonwebtoken.SignatureAlgorithm;
 
 @Component
 public class JWTUtil {
-
+	
 	@Value("${jwt.expiration}")
 	private Long expiration;
 	

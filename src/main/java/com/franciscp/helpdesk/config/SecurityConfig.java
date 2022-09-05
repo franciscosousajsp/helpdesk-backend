@@ -21,8 +21,10 @@ import com.franciscp.helpdesk.security.JWTAuthenticationFilter;
 import com.franciscp.helpdesk.security.JWTAuthorizationFilter;
 import com.franciscp.helpdesk.security.JWTUtil;
 
+
+
 @EnableWebSecurity
-@EnableGlobalMethodSecurity(prePostEnabled = true, securedEnabled = true, jsr250Enabled = true)
+@EnableGlobalMethodSecurity(prePostEnabled = true)
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
 	private static final String[] PUBLIC_MATCHERS = { "/h2-console/**" };
