@@ -29,12 +29,10 @@ public class ClienteService {
 
 	public Cliente findById(Integer id) {
 		Optional<Cliente> obj = repository.findById(id);
-
 		return obj.orElseThrow(() -> new ObjectnotFoundException("Objeto não encontrado! Id: " + id));
 	}
 
 	public List<Cliente> findall() {
-
 		return repository.findAll();
 	}
 
@@ -47,7 +45,6 @@ public class ClienteService {
 	}
 
 	public Cliente update(Integer id, @Valid ClienteDTO objDTO) {
-
 		objDTO.setId(id);
 		Cliente oldObj = findById(id);
 		validaPorCpfeEmail(objDTO);
@@ -58,7 +55,6 @@ public class ClienteService {
 
 	public void delete(Integer id) {
 		Cliente obj = findById(id);
-
 		if (obj.getChamados().size() > 0) {
 			throw new DataIntegrityViolationException("Cliente possui ordens de serviço e não pode ser deletado");
 		}

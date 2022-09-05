@@ -29,12 +29,10 @@ public class TecnicoService {
 
 	public Tecnico findById(Integer id) {
 		Optional<Tecnico> obj = repository.findById(id);
-
 		return obj.orElseThrow(() -> new ObjectnotFoundException("Objeto não encontrado! Id: " + id));
 	}
 
 	public List<Tecnico> findall() {
-
 		return repository.findAll();
 	}
 
@@ -47,7 +45,6 @@ public class TecnicoService {
 	}
 
 	public Tecnico update(Integer id, @Valid TecnicoDTO objDTO) {
-
 		objDTO.setId(id);
 		Tecnico oldObj = findById(id);
 		validaPorCpfeEmail(objDTO);
