@@ -9,7 +9,7 @@
 		<version>2.3.12.RELEASE</version>
 		<relativePath /> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>com.valdir</groupId>
+	<groupId>com.franciscp</groupId>
 	<artifactId>helpdesk</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>helpdesk</name>
@@ -44,7 +44,6 @@
 		<dependency>
 			<groupId>org.postgresql</groupId>
 			<artifactId>postgresql</artifactId>
-			<scope>runtime</scope>
 		</dependency>
 
 		<!-- Security -->
